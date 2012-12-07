@@ -1,3 +1,20 @@
+" General Config
+set mouse=a
+set nu
+colo xoria256
+:set guifont=*
+
+" Mapping for python config
+
+set autoindent
+set softtabstop=4
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+set clipboard+=unnamed
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+
 " PATHOGEN SETTINGS
 filetype off
 call pathogen#runtime_append_all_bundles()
@@ -9,10 +26,8 @@ set foldmethod=indent
 set foldlevel=99
 
 " TASK LIST
-map <C-t> <Plug>TaskList
+map <C-T> <Plug>TaskList
 map <C-g> :GundoToggle<CR>
-set mouse=a
-set nu
 
 " Syntax Highlighting and Validation
 syntax on                           " syntax highlighing
@@ -42,7 +57,6 @@ map <C-s>r :RopeRename<CR>
 nmap <C-s>a <Esc>:Ack!
 
 " GIT
-%{fugitive#statusline()}
 
 " Execute the tests
  nmap <Leader>tf <Esc>:Pytest file<CR>
