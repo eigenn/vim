@@ -43,6 +43,8 @@ syntax on                           " syntax highlighing
 filetype on                          " try to detect filetypes
 filetype plugin indent on    " enable loading indent file for filetype
 let g:pyflakes_use_quickfix = 0
+let g:syntastic_python_checkers = ['flake8']
+"autocmd BufWritePost *.py call Flake8()
 
 " PEP 8
 let g:pep8_map='<C-p>'
