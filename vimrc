@@ -1,8 +1,14 @@
 " General Config
+let mapleader=","
+set encoding=utf-8
 set mouse=a
 set nu
-colo xoria256
-:set guifont=*
+colorscheme zenburn
+let g:evervim_devtoken='S=s55:U=5d94d2:E=142e18e5417:C=13b89dd2817:P=1cd:A=en-devtoken:H=72b582eacefc84ade61d738296d2eb30'
+
+" GUI CONFIG
+set guioptions-=r
+set guioptions-=L
 
 " Mapping for python config
 
@@ -14,6 +20,7 @@ set shiftwidth=4
 set tabstop=4
 set clipboard+=unnamed
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd Filetype python noremap <C-i> i import pdb; pdb.set_trace();<Esc>
 
 " PATHOGEN SETTINGS
 filetype off
@@ -28,6 +35,8 @@ set foldlevel=99
 " TASK LIST
 map <C-T> <Plug>TaskList
 map <C-g> :GundoToggle<CR>
+let g:vimwiki_list = [{'path':'/Users/david.doka/wiki/',
+                        \ 'syntax':'markdown', 'ext':'.md'}]
 
 " Syntax Highlighting and Validation
 syntax on                           " syntax highlighing
@@ -38,25 +47,38 @@ let g:pyflakes_use_quickfix = 0
 " PEP 8
 let g:pep8_map='<C-p>'
 
+" BUILD C/CPP FILES
+nmap <C-b> :<C-U>make %:r && ./%:r<CR>
+
+" POWERLINE
+"let g:Powerline_symbols = 'fancy'
 
 " Tab Completion and Documentation
-"
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
 "NERD Tree
-map <C-a> :NERDTreeToggle<CR>
+map <C-z> :NERDTreeToggle<CR>
+" TABS
+nmap <A-j> gT
+nmap <A-;> gt
+nnoremap <D-j> :tabprevious<CR>
+nnoremap <D-;>   :tabnext<CR>
 
 " ROPE
-"
 map <C-s>j :RopeGotoDefinition<CR>
 map <C-s>r :RopeRename<CR>
 
 " ACK
 nmap <C-s>a <Esc>:Ack!
 
-" GIT
+" WIKI
+nmap <C-v>w <Plug>VimwikiIndex
+nmap <leader>wh :VimwikiAll2HTML<CR>
+set nocompatible 
+
+" Set copy and paste under tmux
 
 " Execute the tests
  nmap <Leader>tf <Esc>:Pytest file<CR>
@@ -66,16 +88,3 @@ nmap <C-s>a <Esc>:Ack!
  nmap <Leader>tn <Esc>:Pytest next<CR>
  nmap <Leader>tp <Esc>:Pytest previous<CR>
  nmap <Leader>te <Esc>:Pytest error<CR>
-
-" Add the virtualenv's site-packages to vim path
- py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir,
-    'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF

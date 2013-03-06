@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/daviddoka/projects/ichi/ichi/ichi'
-let g:netrw_dirhist_2='/Users/daviddoka/data'
-let g:netrw_dirhist_3='/Users/daviddoka/.vim/bundle'
+let g:netrw_dirhist_1='/Users/david.doka/Developer/py-cobra2/api'
+let g:netrw_dirhist_2='/Users/david.doka/Developer/py-iwiacl/frontend'
+let g:netrw_dirhist_3='/Users/david.doka/.ipython/profile_default'
