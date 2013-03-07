@@ -44,21 +44,18 @@ nmap <Leader>tp <Esc>:Pytest previous<CR>
 nmap <Leader>te <Esc>:Pytest error<CR>
 " GENERIC BINDING
 map <C-T> <Plug>TaskList
-map <C-g> :GundoToggle<CR>
+map <leader>g :GundoToggle<CR>
 map <C-z> :NERDTreeToggle<CR>
 nmap <A-j> gT
 nmap <A-;> gt
-nnoremap <D-j> :tabprevious<CR>
-nnoremap <D-;>   :tabnext<CR>
+nnoremap <D-j>:tabprevious<CR>
+nnoremap <D-;>:tabnext<CR>
+nmap <leader>d :TagbarToggle<CR>
 " BUILD C/CPP FILES
 nmap <C-b> :<C-U>make %:r && ./%:r<CR>
-
-
 " ROPE
 map <C-s>j :RopeGotoDefinition<CR>
 map <C-s>r :RopeRename<CR>
-
-
 " WIKI
 nmap <C-v>w <Plug>VimwikiIndex
 nmap <leader>wh :VimwikiAll2HTML<CR>
