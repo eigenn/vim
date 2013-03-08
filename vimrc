@@ -5,6 +5,7 @@ let mapleader=","
 set encoding=utf-8
 set mouse=a
 set nu
+set cursorline
 colorscheme zenburn
 set laststatus=2
 " PATHOGEN SETTINGS
@@ -34,7 +35,7 @@ au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 " PYTHON BINDING
-autocmd Filetype python noremap <C-i>oimport pdb; pdb.set_trace();<Esc>
+autocmd Filetype python noremap <leader>pdb oimport pdb; pdb.set_trace();<Esc>
 let g:pep8_map='<C-p>'
 nmap <Leader>tf <Esc>:Pytest file<CR>
 nmap <Leader>tc <Esc>:Pytest class<CR>
@@ -44,6 +45,7 @@ nmap <Leader>tp <Esc>:Pytest previous<CR>
 nmap <Leader>te <Esc>:Pytest error<CR>
 " GENERIC BINDING
 map <C-T> <Plug>TaskList
+noremap <leader>rv :so $MYVIMRC<CR>
 map <leader>g :GundoToggle<CR>
 map <C-z> :NERDTreeToggle<CR>
 nmap <A-j> gT
@@ -51,14 +53,13 @@ nmap <A-;> gt
 nnoremap <D-j>:tabprevious<CR>
 nnoremap <D-;>:tabnext<CR>
 nmap <leader>d :TagbarToggle<CR>
-" BUILD C/CPP FILES
+map <C-s>rr :RopeRename<CR>
+map <leader>rd :RopeGotoDefinition<CR>
+" C/CPP BINDINGS
 nmap <C-b> :<C-U>make %:r && ./%:r<CR>
-" ROPE
-map <C-s>j :RopeGotoDefinition<CR>
-map <C-s>r :RopeRename<CR>
 " WIKI
 nmap <C-v>w <Plug>VimwikiIndex
 nmap <leader>wh :VimwikiAll2HTML<CR>
-set nocompatible 
+set nocompatible markdown
 let g:vimwiki_list = [{'path':'/Users/david.doka/wiki/',
-                        \ 'syntax':'markdown', 'ext':'.md'}]
+                        \ 'syntax':'markdowni', 'ext':'.md'}]
