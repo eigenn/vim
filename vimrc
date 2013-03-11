@@ -44,7 +44,8 @@ nmap <Leader>tn <Esc>:Pytest next<CR>
 nmap <Leader>tp <Esc>:Pytest previous<CR>
 nmap <Leader>te <Esc>:Pytest error<CR>
 " GENERIC BINDING
-map <C-T> <Plug>TaskList
+au FileType mail let b:delimitMate_autoclose = 0
+map <leader>tl <Plug>TaskList
 noremap <leader>rv :so $MYVIMRC<CR>
 map <leader>g :GundoToggle<CR>
 map <C-z> :NERDTreeToggle<CR>
@@ -60,6 +61,6 @@ nmap <C-b> :<C-U>make %:r && ./%:r<CR>
 " WIKI
 nmap <C-v>w <Plug>VimwikiIndex
 nmap <leader>wh :VimwikiAll2HTML<CR>
-set nocompatible markdown
+set nocompatible 
 let g:vimwiki_list = [{'path':'/Users/david.doka/wiki/',
-                        \ 'syntax':'markdowni', 'ext':'.md'}]
+                        \ 'syntax':'markdown', 'ext':'.md'}]
