@@ -40,6 +40,7 @@ set laststatus=2
 filetype on
 filetype plugin indent on
 syntax on
+set nocompatible
 
 " Showing line numbers and length
 set number  " show line numbers
@@ -119,6 +120,9 @@ nmap <C-b> :<C-U>make %:r && ./%:r<CR>
 " NERDTREE
 let NERDTreeIgnore=['\.pyc', '\.swo$', '\.swp$']
 map <C-z> :NERDTreeToggle<CR>
+
+" VIM WIKI
+let g:vimwiki_list = [{'path': '~/.vim/wiki/', 'path_html': '~/.vim/html_wiki/'}]
 
 " PYTHON BINDING
 let g:pep8_map='<C-p>'
