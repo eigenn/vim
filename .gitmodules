@@ -55,9 +55,6 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "bundle/vim-debug"]
-	path = bundle/vim-debug
-	url = https://github.com/jabapyth/vim-debug.git
 [submodule "bundle/Conque-Shell"]
 	path = bundle/Conque-Shell
 	url = https://github.com/vim-scripts/Conque-Shell.git

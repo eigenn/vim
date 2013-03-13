@@ -4,6 +4,9 @@
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
+" RELOAD VIMRC
+noremap <leader>rv :so $MYVIMRC<CR>
+
 " Better copy & paste
 set pastetoggle=<F2>
 set clipboard=unnamed"`
@@ -102,8 +105,6 @@ au FileType python set omnifunc=pythoncomplete#Complete
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd BufRead *.py set colorcolumn=80
 autocmd BufRead *.py highlight ColorColumn ctermbg=DarkRed
-let g:syntastic_python_checkers = ['flake8']
-let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 autocmd Filetype python noremap <leader>pdb oimport pdb; pdb.set_trace();<Esc>
 
@@ -124,23 +125,32 @@ map <C-z> :NERDTreeToggle<CR>
 " VIM WIKI
 let g:vimwiki_list = [{'path': '~/.vim/wiki/', 'path_html': '~/.vim/html_wiki/'}]
 
-" PYTHON BINDING
+" PEP8
 let g:pep8_map='<C-p>'
+
+" PYTEST
 nmap <Leader>tf <Esc>:Pytest file<CR>
 nmap <Leader>tc <Esc>:Pytest class<CR>
 nmap <Leader>tm <Esc>:Pytest method<CR>
 nmap <Leader>tn <Esc>:Pytest next<CR>
 nmap <Leader>tp <Esc>:Pytest previous<CR>
 nmap <Leader>te <Esc>:Pytest error<CR>
-" GENERIC BINDING
-au FileType mail let b:delimitMate_autoclose = 0
+
+" SYNTASTIC
+let g:syntastic_python_checkers = ['flake8']
+
+" TASKLIST
 map <leader>tl <Plug>TaskList
-noremap <leader>rv :so $MYVIMRC<CR>
+
+" GUNDO
 map <leader>g :GundoToggle<CR>
-nmap <A-j> gT
-nmap <A-;> gt
-nnoremap <D-j>:tabprevious<CR>
-nnoremap <D-;>:tabnext<CR>
+
+" TAGBAR
 nmap <leader>d :TagbarToggle<CR>
+
+" ROPE
 map <C-s>rr :RopeRename<CR>
 map <leader>rd :RopeGotoDefinition<CR>
+
+" SUPERTAB
+let g:SuperTabDefaultCompletionType = "context"
