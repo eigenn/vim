@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/david.doka/Developer/py-cobra/libs'
 let g:netrw_dirhist_2='/Users/david.doka/.vim/syntax'
 let g:netrw_dirhist_3='/Users/david.doka/.vim/compiler'
+let g:netrw_dirhist_4='/usr/lib/python2.7'
