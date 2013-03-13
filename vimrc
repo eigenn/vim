@@ -1,41 +1,126 @@
-" Auto reload vim
+" ======================================================== "
+" ================= GENERIC VIM SETTINGS ================= "
+" ======================================================== "
+" Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
-" General Config
-let mapleader=","
-set encoding=utf-8
+
+" Better copy & paste
+set pastetoggle=<F2>
+set clipboard=unnamed"`
+
+" Backspace
+set bs=2
+
+" Mouse
 set mouse=a
-set nu
+
+" Rebind <Leader> key
+let mapleader=","
+
+" Tabs
+map <Leader>n <esc>:tabprevious<CR>
+map <Leader>m <esc>:tabnext<CR>
+
+" Quick save
+noremap <C-s> :update<CR>
+
+" Encoding 
+set encoding=utf-8
+
+" Underline on curent line
 set cursorline
+
+" Color theme 
 colorscheme zenburn
+
+" Alwasy show status
 set laststatus=2
-" PATHOGEN SETTINGS
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-" GUI CONFIG
-set guioptions-=r
-set guioptions-=L
-" PYTHON SETTINGS 
-set autoindent
-set softtabstop=4
-set expandtab
-set smarttab
-set shiftwidth=4
-set tabstop=4
-set clipboard+=unnamed
-autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-syntax on
+
+" Eneble Syntex hilight
 filetype on
 filetype plugin indent on
-let g:pyflakes_use_quickfix = 0
-let g:syntastic_python_checkers = ['flake8']
-set foldmethod=indent
+syntax on
+
+" Showing line numbers and length
+set number  " show line numbers
+set tw=79   " width of document (used by gd)
+set nowrap  " don't automatically wrap on load
+set fo-=t   " don't automatically wrap text when typing
+
+" Make search case insensitive
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" Search History
+set history=700
+set undolevels=700
+
+" Tab Settings
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set shiftround
+set expandtab
 set foldlevel=79
+set foldmethod=indent
+
+" Disable stupid backup and swap files - they trigger too many events
+set nobackup
+set nowritebackup
+set noswapfile
+
+
+" ======================================================== "
+" =================== PHATOGEN SETTINGS ================== "
+" ======================================================== "
+
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+" ======================================================== "
+" ===================== GUI SETTINGS ===================== "
+" ======================================================== "
+
+set guioptions-=r
+set guioptions-=L
+
+" ======================================================== "
+" =================== PYTHON SETTINGS ==================== "
+" ======================================================== "
+
+au FileType python set foldlevel=79
+au FileType python set autoindent
+au FileType python set shiftwidth=4
+au FileType python set softtabstop=4
+au FileType python set expandtab
+au FileType python set tabstop=4
+au FileType python set smarttab
 au FileType python set omnifunc=pythoncomplete#Complete
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd BufRead *.py set colorcolumn=80
+autocmd BufRead *.py highlight ColorColumn ctermbg=DarkRed
+let g:syntastic_python_checkers = ['flake8']
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
-" PYTHON BINDING
 autocmd Filetype python noremap <leader>pdb oimport pdb; pdb.set_trace();<Esc>
+
+" ======================================================== "
+" =================== C/CPP SETTINGS ===================== "
+" ======================================================== "
+
+nmap <C-b> :<C-U>make %:r && ./%:r<CR>
+
+" ======================================================== "
+" =================== PLUGIN SETTINGS ==================== "
+" ======================================================== "
+
+" NERDTREE
+let NERDTreeIgnore=['\.pyc', '\.swo$', '\.swp$']
+map <C-z> :NERDTreeToggle<CR>
+
+" PYTHON BINDING
 let g:pep8_map='<C-p>'
 nmap <Leader>tf <Esc>:Pytest file<CR>
 nmap <Leader>tc <Esc>:Pytest class<CR>
@@ -48,7 +133,6 @@ au FileType mail let b:delimitMate_autoclose = 0
 map <leader>tl <Plug>TaskList
 noremap <leader>rv :so $MYVIMRC<CR>
 map <leader>g :GundoToggle<CR>
-map <C-z> :NERDTreeToggle<CR>
 nmap <A-j> gT
 nmap <A-;> gt
 nnoremap <D-j>:tabprevious<CR>
@@ -56,11 +140,3 @@ nnoremap <D-;>:tabnext<CR>
 nmap <leader>d :TagbarToggle<CR>
 map <C-s>rr :RopeRename<CR>
 map <leader>rd :RopeGotoDefinition<CR>
-" C/CPP BINDINGS
-nmap <C-b> :<C-U>make %:r && ./%:r<CR>
-" WIKI
-nmap <C-v>w <Plug>VimwikiIndex
-nmap <leader>wh :VimwikiAll2HTML<CR>
-set nocompatible 
-let g:vimwiki_list = [{'path':'/Users/david.doka/wiki/',
-                        \ 'syntax':'markdown', 'ext':'.md'}]
