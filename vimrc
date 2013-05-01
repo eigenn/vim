@@ -65,9 +65,9 @@ set history=700
 set undolevels=700
 
 " Tab Settings
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set shiftround
 set expandtab
 set foldlevel=79
@@ -155,6 +155,7 @@ let g:jedi#pydoc = "<leader>doc"
 
 " SYNTASTIC
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501'
 
 " TASKLIST
 map <leader>tl <Plug>TaskList
