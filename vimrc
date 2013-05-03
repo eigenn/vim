@@ -20,6 +20,9 @@ set bs=2
 " Mouse
 set mouse=a
 
+" The kileer of all the settings 
+set autoread
+
 " Rebind <Leader> key
 let mapleader=","
 
@@ -77,6 +80,15 @@ set foldmethod=indent
 set nobackup
 set nowritebackup
 set noswapfile
+
+" ======================================================== "
+" =============== EVERNOTE MARKDOWN WIKI ================= "
+" ======================================================== "
+
+noremap <leader>el <Esc>:tabe ~/.dot_files/evernote/<CR>
+noremap <leader>eu <Esc>:!python ~/.dot_files/evernote_update.py<CR>
+noremap <leader>erl <Esc>:!python ~/.dot_files/geeknote/geeknote.py notebook-list<CR>
+
 
 
 " ======================================================== "
@@ -136,9 +148,6 @@ nmap <C-b> :<C-U>make %:r && ./%:r<CR>
 " NERDTREE
 let NERDTreeIgnore=['\.pyc', '\.swo$', '\.swp$']
 map <C-z> :NERDTreeToggle<CR>
-
-" VIM WIKI
-let g:vimwiki_list = [{'path': '~/.vim/wiki/', 'path_html': '~/.vim/html_wiki/'}]
 
 " PYTEST
 nmap <Leader>tf <Esc>:Pytest file<CR>
