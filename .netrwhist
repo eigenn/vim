@@ -1,9 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/david.doka/Developer/py-cobra/libs'
-let g:netrw_dirhist_2='/Users/david.doka/.vim/syntax'
-let g:netrw_dirhist_3='/Users/david.doka/.vim/compiler'
-let g:netrw_dirhist_4='/usr/lib/python2.7'
-let g:netrw_dirhist_5='/Users/david.doka/Developer/py-cobra2/cover'
-let g:netrw_dirhist_6='/Users/david.doka/.vim/bundle/py.test'
-let g:netrw_dirhist_7='/Users/david.doka/.vim/.git'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/daviddoka/Projects/egift/egift/sites/asda'
+let g:netrw_dirhist_2='/home/daviddoka/Projects/egift/egift/media/theme_media'
+let g:netrw_dirhist_3='/home/daviddoka/Projects/egift/egift'

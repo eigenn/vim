@@ -49,3 +49,6 @@
 [submodule "bundle/jedi"]
 	path = bundle/jedi
 	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "bundle/dart-vim"]
+	path = bundle/dart-vim
+	url = https://github.com/dart-lang/dart-vim-plugin.git
