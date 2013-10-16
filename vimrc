@@ -144,10 +144,11 @@ nmap <C-b> :<C-U>make %:r && ./%:r<CR>
 " ======================================================== "
 " =================== PLUGIN SETTINGS ==================== "
 " ======================================================== "
+:imap jj <Esc>
 
 " NERDTREE
 let NERDTreeIgnore=['\.pyc', '\.swo$', '\.swp$']
-map <C-z> :NERDTreeToggle<CR>
+map <C-x> :NERDTreeToggle<CR>
 
 " PYTEST
 nmap <Leader>tf <Esc>:Pytest file<CR>
