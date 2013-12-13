@@ -40,7 +40,9 @@ set encoding=utf-8
 set cursorline
 
 " Color theme 
-colorscheme zenburn
+syntax enable
+set background=dark
+colorscheme solarized
 
 " Alwasy show status
 set laststatus=2
@@ -110,10 +112,15 @@ map <leader>tl <Plug>TaskList
 map <leader>g :GundoToggle<CR>
 
 " TAGBAR
-nmap <leader>d :TagbarToggle<CR>
+map <leader>tt :TagbarToggle<CR>
 
 " SUPERTAB
 let g:SuperTabDefaultCompletionType = "context"
+
+" POWERLINE"
+let Powerline_theme='long'
+let Powerline_colorscheme='solarized16_dark'
+
 
 autocmd FileType python source ~/.vim/py.vim
 autocmd FileType haskell source ~/.vim/haskell.vim
