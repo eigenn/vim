@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/daviddoka/Projects/egift/egift/sites/asda'
-let g:netrw_dirhist_2='/home/daviddoka/Projects/egift/egift/media/theme_media'
-let g:netrw_dirhist_3='/home/daviddoka/Projects/egift/egift'
-let g:netrw_dirhist_4='/Users/daviddoka/.env'
