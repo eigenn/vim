@@ -125,3 +125,4 @@ let Powerline_colorscheme='solarized16_dark'
 autocmd FileType python source ~/.vim/py.vim
 autocmd FileType haskell source ~/.vim/haskell.vim
 autocmd FileType cpp source ~/.vim/cpp.vim
+autocmd BufNewFile,BufRead *.json set ft=javascript
