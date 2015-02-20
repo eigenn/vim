@@ -70,3 +70,10 @@
 	path = bundle/vim-solarized-powerline
 	url = https://github.com/stephenmckinney/vim-solarized-powerline.git
     branch = master
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = git@github.com:plasticboy/vim-markdown.git
+    branch = master
+[submodule "/Users/daviddoka/.vim/bundle/vim-livedown"]
+	path = /Users/daviddoka/.vim/bundle/vim-livedown
+	url = git://github.com/shime/vim-livedown.git

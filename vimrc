@@ -105,6 +105,9 @@ set guioptions-=L
 let NERDTreeIgnore=['\.pyc', '\.swo$', '\.swp$']
 map <C-x> :NERDTreeToggle<CR>
 
+" LIVE PREVIEW
+map <leader>md :LivedownPreview<CR>
+
 " TASKLIST
 map <leader>tl <Plug>TaskList
 
