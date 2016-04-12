@@ -11,6 +11,7 @@ autocmd BufRead *.py set colorcolumn=80
 autocmd BufRead *.py highlight ColorColumn ctermbg=DarkRed
 set completeopt=menuone,longest,preview
 autocmd Filetype python noremap <leader>pdb oimport pdb; pdb.set_trace();<Esc>
+autocmd Filetype python noremap <leader>pt oimport traceback; traceback.print_stack();<Esc>
 
 " Add the virtualenv's site-packages to vim path
 python << EOF
